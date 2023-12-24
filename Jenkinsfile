@@ -4,7 +4,7 @@ pipeline {
 	    stage('checkout the code'){
 	        steps {
 	                    cleanWs()
-                         checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/saurabhsamarjeet/tourofheros.git']]])
+                      checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/saurabhsamarjeet/tourofheros.git']]])
                            
                      }
               }
@@ -13,7 +13,7 @@ pipeline {
 			          bat ' docker build -t tourofheros .'
 		      }
 	    }
-	    stage ( 'Run the docker')
+	    stage ( 'Run the docker') {
 		      steps {
 			          bat ' docker run -d -p 4200:4200 tourofheros '
 		      }

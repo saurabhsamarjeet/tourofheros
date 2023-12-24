@@ -8,15 +8,15 @@ pipeline {
                            
                      }
               }
-	     Stage ('Build and Push') {
-		steps {
-			bash ' docker build -t tourofheros .'
-		}
-	}
-	     Stage ( 'Run the docker')
-		steps {
-			bash ' docker run -d -p 4200:4200 tourofheros '
-		}
-	}
-}
+	    stage ('Build and Push') {
+		      steps {
+			          bat ' docker build -t tourofheros .'
+		      }
+	    }
+	    stage ( 'Run the docker')
+		      steps {
+			          bat ' docker run -d -p 4200:4200 tourofheros '
+		      }
+	    }
+  }
 }

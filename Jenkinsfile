@@ -4,7 +4,7 @@ pipeline {
 	    stage('checkout the code'){
 	        steps {
 	                    cleanWs()
-                      checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/saurabhsamarjeet/tourofheros.git']]])
+                      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/saurabhsamarjeet/tourofheros.git']]])
                            
                      }
               }
